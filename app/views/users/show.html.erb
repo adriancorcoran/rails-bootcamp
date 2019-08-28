@@ -1,0 +1,30 @@
+<h1> Profile </h1>
+
+<%=
+=begin
+%>
+<table>
+  <tr>
+    <td> <b> NAME:</b> </td>
+    <td> <%= @user.first_name %> <%= @user.last_name %> </td>
+  </tr>
+  <tr>
+    <td> <b> EMAIL:</b> </td>
+    <td> <%= @user.email %> </td>
+  </tr>
+</table>
+<%=
+=end
+%>
+
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, required: true, class: 'form-control' %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, required: true, class: 'form-control' %>
+  <%= f.label :email %>
+  <%= f.email_field :email, required: true, class: 'form-control' %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+<%=link_to "Delete user", @user, method: :delete %>
