@@ -1,0 +1,19 @@
+<h1> Profile </h1>
+
+<table>
+  <% @users.each do |user| %>
+    <tr>
+      <td><strong> Name:</strong> </td>
+      <td><%="#{user.first_name} #{user.last_name}"%></td>
+      <td><strong> Email:</strong> </td>
+      <td><%= user.email %></td>
+      <td><%=link_to "Edit user", user %></td>
+      <td><%=link_to "Delete user", user, method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<br><br>
+
+<%=link_to "Add User", new_user_path %>
