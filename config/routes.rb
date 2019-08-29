@@ -14,4 +14,10 @@ Rails.application.routes.draw do
   # edit_user_path(:id) returns /users/:id/edit (for instance, edit_user_path(10) returns /users/10/edit)
   # user_path(:id) returns /users/:id (for instance, user_path(10) returns /users/10)
 
+  # sessions
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
+
 end

@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.last(10)
+    if session[:current_user_id]
+      @users = User.last(100)
+      @user = User.find(session[:current_user_id])
+    else
+      redirect_to login_path
+    end
   end
 
   def new 
@@ -25,8 +30,12 @@ class UsersController < ApplicationController
     # save the new user
     @user.save
 
+    # log them in 
+    session[:current_user_id] = @user.id
+
     # redirect
-    redirect_to user_path(@user.id)
+    # redirect_to user_path(@user.id)
+    redirect_to users_path
   end
 
   def show
@@ -44,7 +53,8 @@ class UsersController < ApplicationController
     @user.destroy
 
     # redirect
-    redirect_to users_path
+    redirect_to logout_path, method: :delete
+    # redirect_to users_path
   end
   
 end

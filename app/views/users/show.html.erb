@@ -1,4 +1,4 @@
-<h1> Profile </h1>
+<h1>Hi there <%= @user.first_name %>!</h1>
 
 <%=
 =begin
@@ -27,8 +27,14 @@
   <%= f.submit "Update", class: "btn btn-primary" %>
 <% end %>
 
-<%=link_to "Delete user", @user, method: :delete %>
+<br>
+
+<%=link_to "Delete me!", @user, method: :delete %>
 
 <br><br>
 
 <%=link_to "Show All Users", users_path %>
+
+<br><br>
+
+<%=link_to "Logout", logout_path, method: :delete %>
