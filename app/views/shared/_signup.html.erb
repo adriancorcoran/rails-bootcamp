@@ -1,0 +1,29 @@
+<% 
+=begin
+%>
+
+<% # using local variables: must always be present %>
+<%= link_to text, new_user_path %>
+
+<% 
+=end
+%>
+
+<% 
+# ------------------------------
+%>
+
+<% 
+# =begin
+%>
+
+<%# using local variables: optional %>
+<% if local_assigns[:text] && local_assigns[:link] %>
+  <%=link_to local_assigns[:text], local_assigns[:link] %>
+  <% else %>
+  <%=link_to "Sign Up", new_user_path %>
+<% end %>
+
+<% 
+# =end
+%>

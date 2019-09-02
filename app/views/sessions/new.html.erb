@@ -10,4 +10,13 @@
 
 <br>
 
-<%=link_to "Or Sign Up", new_user_path %>
+<%= 
+# simple partial
+# render "shared/signup"
+
+# OR partial with variables: optional when partial has defaults
+render "shared/signup", text: "Sign Up for a New Account", link: new_user_path
+
+# OR partial with variables: must be present
+# render partial: "shared/signup", locals: { text: "Or Sign Up", link: new_user_path }
+%>

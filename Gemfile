@@ -54,3 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'shopify-cloud', source: 'https://packages.shopify.io/shopify/gems'
+
+
+# --------------------------------------------------
+# custom - added by Adrian
+
+gem 'bootstrap-sass' 
+# Visit https://github.com/twbs/bootstrap-sass#a-ruby-on-rails if you want to use bootstrap-sass

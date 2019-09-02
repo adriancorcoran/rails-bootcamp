@@ -1,0 +1,12 @@
+<% # render the flash message %>
+
+<div>
+  <div class="Polaris-Banner__Heading">
+    <p class="Polaris-Heading"><%= message['title'] %></p>
+    <% if message['text'] %>
+      <div class="Polaris-Banner__Content">
+        <p><%= message['text'] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
