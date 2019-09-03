@@ -24,6 +24,8 @@
   <%= f.text_field :last_name, required: true, class: 'form-control' %>
   <%= f.label :email %>
   <%= f.email_field :email, required: true, class: 'form-control' %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number, required: false, class: 'form-control' %>
   <%= f.submit "Update", class: "btn btn-primary" %>
 <% end %>
 

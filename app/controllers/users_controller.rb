@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     # )
 
     # short form
-    @user = User.create(params.require(:user).permit(:email, :password, :first_name, :last_name))
+    @user = User.create(params.require(:user).permit(:phone_number, :email, :password, :first_name, :last_name))
 
     # save the new user
     @user.save
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(params.require(:user).permit(:email, :first_name, :last_name))
+    @user.update_attributes(params.require(:user).permit(:phone_number, :email, :first_name, :last_name))
     # add message
     flash[:title] = "User updated!"
     flash[:success] = "Your details were updated!"
