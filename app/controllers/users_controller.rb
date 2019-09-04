@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     if session[:current_user_id]
       @users = User.last(100)
       @user = User.find(session[:current_user_id])
+      
+      # generate shop url and add to session
+      set_user_shop_url()
+
     else
       # add message
       flash[:title] = "Login"
@@ -35,6 +39,9 @@ class UsersController < ApplicationController
 
     # log them in 
     session[:current_user_id] = @user.id
+
+    # generate shop url and add to session
+    set_user_shop_url()
     
     # add message
     flash[:title] = "User created!"
@@ -47,6 +54,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    # generate shop url and add to session
+    set_user_shop_url()
+
     # add message
     flash.now[:title] = "Edit user"
     flash.now[:notice] = "Below you may edit your profile"    
@@ -74,4 +85,16 @@ class UsersController < ApplicationController
     # redirect_to users_path
   end
   
+  # set the unique url for the shop login link in the nav
+  def set_user_shop_url()
+    # add to session so it is easy to access
+    session[:shop_url] = ShopifyMultipass.new(Rails.application.credentials.shop_multipass_secret).get_shop_login_url({
+      email: @user.email,
+      first_name: @user.first_name,
+      last_name: @user.last_name,
+      tag_string: "created by multipass"      
+    })
+  end
+  
 end
+

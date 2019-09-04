@@ -23,18 +23,14 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    # remove tehe user id from the session
     session.delete(:current_user_id)
+    # remove tehe user shop url from the session
+    session.delete(:shop_url)
+    # add notices
     flash[:title] = "Logged out"
     flash[:notice] = "You are now logged out!"
   redirect_to login_path
   end
   
 end
-
-# flash[:success] = { title: "Yay!", text: "It worked!" }
-# flash[:notice] = { title: "Just letting you know", text: "Watch out for this" }
-# flash[:error] = { title: "Uh oh!", text: "Something went wrong!" }
-
-# flash.now[:success] = { title: "Yay!", text: "It worked!" }
-# flash.now[:notice] = { title: "Just letting you know", text: "Watch out for this" }
-# flash.now[:error] = { title: "Uh oh!", text: "Something went wrong!" }

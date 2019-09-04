@@ -15,5 +15,10 @@ module RailsBootcamp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # custom config settings - added by adrian
+    
+    # set the store url to login to with multipass
+    config.shop_url = "test-store-adrian-corcoran-01.myshopify.com"
   end
 end

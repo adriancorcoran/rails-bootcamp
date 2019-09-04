@@ -5,15 +5,16 @@
 
     <%# check if user logged in %>
     <% if session[:current_user_id] %>
+      <div class="Polaris-ButtonGroup__Item"><a href="<%= session[:shop_url] %>" title="Shop"><button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Shop</span></span></button></a></div>
       <div class="Polaris-ButtonGroup__Item">
         <%= link_to logout_path, method: :delete do %>
-          <button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Logout</span></span></button>
+          <button type="button" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Logout</span></span></button>
         <% end %>
       </div>
     <% else %>
       <div class="Polaris-ButtonGroup__Item"><a href="<%= new_user_path %>" title="Sign Up"><button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Sign Up</span></span></button></a></div>
       <div class="Polaris-ButtonGroup__Item"><a href="<%= login_path %>" title="Login"><button type="button" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Login</span></span></button></a></div>
     <% end %>
-
+    
   </div>
 </div>
