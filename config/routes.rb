@@ -21,5 +21,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   delete 'logout' => 'sessions#destroy'
+  
+  # rentals
+  get 'rentals/new/:product_id' => 'rentals#new'
 
 end

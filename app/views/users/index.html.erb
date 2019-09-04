@@ -1,6 +1,8 @@
-<h1>Hi there <%= @user.first_name %>!</h1>
+<% content_for :main_heading do %>
+  Hi there <%= @user.first_name %>! Here's all the Users :)
+<% end %>
 
-<table>
+<table id="users-table">
   <% @users.each do |user| %>
     <tr>
       <td><strong> Name:</strong> </td>
@@ -8,8 +10,20 @@
       <td><strong> Email:</strong> </td>
       <td><%= user.email %></td>
       <% if session[:current_user_id] == user.id %>
-        <td><%=link_to "Edit user", user %></td>
-        <td><%=link_to "Delete user", user, method: :delete %></td>
+        <td>                  
+          <div class="Polaris-ButtonGroup__Item">
+            <%= link_to user do %>
+            <button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Edit</span></span></button>
+            <% end %>
+          </div>  
+        </td>
+        <td>
+          <div class="Polaris-ButtonGroup__Item">
+            <%= link_to user, method: :delete do %>
+            <button type="button" class="Polaris-Button Polaris-Button--destructive"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Delete</span></span></button>
+            <% end %>
+          </div>        
+        </td>
       <% else %>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -17,7 +31,3 @@
     </tr>
   <% end %>
 </table>
-
-<br>
-
-<%=link_to "Logout", logout_path, method: :delete %>

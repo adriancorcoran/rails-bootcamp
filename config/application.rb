@@ -19,6 +19,9 @@ module RailsBootcamp
     # custom config settings - added by adrian
     
     # set the store url to login to with multipass
-    config.shop_url = "test-store-adrian-corcoran-01.myshopify.com"
+    config.shop_url = "https://test-store-adrian-corcoran-01.myshopify.com"
+    
+    # set the store api url
+    config.shop_url_api = "https://#{Rails.application.credentials.shop_api_key}:#{Rails.application.credentials.shop_api_password}@test-store-adrian-corcoran-01.myshopify.com/admin/api/2019-07/"
   end
 end

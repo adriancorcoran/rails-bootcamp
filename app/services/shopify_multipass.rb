@@ -30,9 +30,9 @@ class ShopifyMultipass
   def get_shop_login_url(user_data)
     if user_data
       token = generate_token(user_data)
-      return "https://#{ Rails.application.config.shop_url }/account/login/multipass/#{ token }"
+      return "#{ Rails.application.config.shop_url }/account/login/multipass/#{ token }"
     else
-      return "https://#{ Rails.application.config.shop_url }"
+      return "#{ Rails.application.config.shop_url }"
     end
   end
 

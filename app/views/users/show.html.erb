@@ -1,4 +1,6 @@
-<h1>Hi there <%= @user.first_name %>!</h1>
+<% content_for :main_heading do %>
+  Edit your profile
+<% end %>
 
 <%=
 =begin
@@ -31,12 +33,8 @@
 
 <br>
 
-<%=link_to "Delete me!", @user, method: :delete %>
-
-<br><br>
-
-<%=link_to "Show All Users", users_path %>
-
-<br><br>
-
-<%=link_to "Logout", logout_path, method: :delete %>
+<div class="Polaris-ButtonGroup__Item">
+  <%= link_to @user, method: :delete do %>
+  <button type="button" class="Polaris-Button Polaris-Button--destructive"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Delete Me!</span></span></button>
+  <% end %>
+</div>

@@ -7,6 +7,11 @@
     <% if session[:current_user_id] %>
       <div class="Polaris-ButtonGroup__Item"><a href="<%= session[:shop_url] %>" title="Shop"><button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Shop</span></span></button></a></div>
       <div class="Polaris-ButtonGroup__Item">
+        <%= link_to users_path do %>
+          <button type="button" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Show All Users</span></span></button>
+        <% end %>
+      </div>
+      <div class="Polaris-ButtonGroup__Item">
         <%= link_to logout_path, method: :delete do %>
           <button type="button" class="Polaris-Button"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Logout</span></span></button>
         <% end %>

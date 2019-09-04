@@ -59,5 +59,9 @@ gem 'shopify-cloud', source: 'https://packages.shopify.io/shopify/gems'
 # --------------------------------------------------
 # custom - added by Adrian
 
+# add sass
 gem 'bootstrap-sass' 
 # Visit https://github.com/twbs/bootstrap-sass#a-ruby-on-rails if you want to use bootstrap-sass
+
+# add shopify_api to access Shopify store api
+gem 'shopify_api', '>= 7.0.1'
