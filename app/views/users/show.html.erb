@@ -33,8 +33,4 @@
 
 <br>
 
-<div class="Polaris-ButtonGroup__Item">
-  <%= link_to @user, method: :delete do %>
-  <button type="button" class="Polaris-Button Polaris-Button--destructive"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Delete Me!</span></span></button>
-  <% end %>
-</div>
+<%= render "shared/button", text: "Delete Me!", link: @user, style_class: 'Polaris-Button--destructive', method: :delete %>

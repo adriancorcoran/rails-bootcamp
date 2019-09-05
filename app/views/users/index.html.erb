@@ -11,18 +11,10 @@
       <td><%= user.email %></td>
       <% if session[:current_user_id] == user.id %>
         <td>                  
-          <div class="Polaris-ButtonGroup__Item">
-            <%= link_to user do %>
-            <button type="button" class="Polaris-Button Polaris-Button--primary"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Edit</span></span></button>
-            <% end %>
-          </div>  
+          <%= render "shared/button", text: "Edit", link: user, style_class: 'Polaris-Button--primary' %>
         </td>
         <td>
-          <div class="Polaris-ButtonGroup__Item">
-            <%= link_to user, method: :delete do %>
-            <button type="button" class="Polaris-Button Polaris-Button--destructive"><span class="Polaris-Button__Content"><span class="Polaris-Button__Text">Delete</span></span></button>
-            <% end %>
-          </div>        
+          <%= render "shared/button", text: "Delete", link: user, style_class: 'Polaris-Button--destructive', method: :delete %>
         </td>
       <% else %>
         <td>&nbsp;</td>
