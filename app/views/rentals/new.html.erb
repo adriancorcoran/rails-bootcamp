@@ -1,5 +1,192 @@
+<%# buy button %>
+
+<div id='product-component-1567694939480'></div>
+    <script type="text/javascript">
+    /*<![CDATA[*/
+      (function () {
+        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
+          } else {
+            loadScript();
+          }
+        } else {
+          loadScript();
+        }
+
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'test-store-adrian-corcoran-01.myshopify.com',
+          storefrontAccessToken: 'cbff80f5fe3928d2e4d43fe753b89aac',
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent('product', {
+            id: [12533727254],
+            node: document.getElementById('product-component-1567694939480'),
+            moneyFormat: '€{{amount}}',
+            options: {"product":{"variantId":"all","width":"240px","contents":{"img":false,"imgWithCarousel":false,"title":false,"variantTitle":false,"price":false,"description":false,"buttonWithQuantity":false,"quantity":false},"styles":{"product":{"text-align":"left","@media (min-width: 601px)":{"max-width":"100%","margin-left":"0","margin-bottom":"50px"}},"compareAt":{"font-size":"12px"}}},"cart":{"contents":{"button":true},"styles":{"footer":{"background-color":"#ffffff"}}},"modalProduct":{"contents":{"img":false,"imgWithCarousel":true,"variantTitle":false,"buttonWithQuantity":true,"button":false,"quantity":false},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0px","margin-bottom":"0px"}}}},"productSet":{"styles":{"products":{"@media (min-width: 601px)":{"margin-left":"-20px"}}}}},
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
+
+
+
+<%
+=begin
+%>
+
+# Checkout links
+
+Pack of 3 / L
+https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:1?channel=buy_button
+
+Pack of 3 / M
+https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932488214:1?channel=buy_button
+
+Pack of 9 / L
+https://test-store-adrian-corcoran-01.myshopify.com/cart/42022404118:1?channel=buy_button
+
+Pack of 9 / M
+https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932520982:1?channel=buy_button
+
+<%
+=end
+%>
+
+<% # ------------------------------ %>
+
 <% content_for :main_heading do %>
-  New Rental
+  You have chosen to rent: <strong><%= @product.title %></strong>
 <% end %>
 
-<h1>New Rental for Product with id: <%= params[:product_id] %></h1>
+<p>Please select a starting date and rental period below:</p>
+
+<%# loop through and display variants %>
+<%= select_tag :variant_id, options_for_select(@variants.collect{ |v| ["#{v.title}-#{v.id}", v.id] }) %>
+
+<%= render "shared/button", text: "Rent", link: 'https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:1?channel=buy_button', style_class: 'Polaris-Button--primary' %>
+
+
+
+
+
+
+<%
+=begin
+%>
+
+<%# original code from bootcamp - doesn't work %>
+
+<script src="https://sdks.shopifycdn.com/js-buy-sdk/latest/shopify-buy.polyfilled.globals.js"></script>
+<script language="javascript">
+  var shopClient = ShopifyBuy.buildClient({
+    apiKey: '<%= Rails.application.credentials.shop_api_key %>',
+    domain: '<%= Rails.application.config.shop_domain %>',
+    appId: '6'
+  });
+
+  var product;
+  shopClient.fetchProduct(<%=params[:product_id] %>).then(function (fetchedProduct) {
+     product = fetchedProduct;
+   });
+
+  function goCheckout() {
+    var e = document.getElementById("variant_id");
+    var variant_id = e.options[e.selectedIndex].value;
+    var variant = getVariant(variant_id);
+
+    window.shopClient.createCart().then(function (newCart) {
+      newCart.addVariants({variant: variant, quantity: 1}).then(function (cart) {
+        document.location.href = cart.checkoutUrl;
+      });
+    });
+  }
+
+  function getVariant(variant_id) {
+    for (var i = 0; i < product.variants.length; i++) {
+      if (product.variants[i].id == variant_id) {
+        return product.variants[i];
+      }
+    }
+  }
+</script>
+
+
+<%
+=end
+%>
+
+<%
+=begin
+%>
+
+<%# new code needs graphql and new id format - doesn't work %>
+
+<script src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+
+<script language="javascript">
+  var client = ShopifyBuy.buildClient({
+    storefrontAccessToken: '<%= Rails.application.credentials.shop_storefront_access_token %>',
+    domain: '<%= Rails.application.config.shop_domain %>'
+  });
+
+  client.product.fetchAll().then((products) => {
+    // Do something with the products
+    console.log(products);
+    products.forEach(product => console.log(`${product.title}: ${product.id}`))
+  });
+
+  // Fetch a single product by ID
+  var productId = '<%=params[:product_id] %>';
+
+  client.product.fetch(productId).then((product) => {
+    // Do something with the product
+    console.log(product);
+  });
+
+  // Fetch a single product by ID
+  productId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzEyNTMzNjI4OTUw';
+
+  client.product.fetch(productId).then((product) => {
+    // Do something with the product
+    console.log(product);
+  });
+
+
+  // function goCheckout() {
+  //   var e = document.getElementById("variant_id");
+  //   var variant_id = e.options[e.selectedIndex].value;
+  //   var variant = getVariant(variant_id);
+
+  //   window.shopClient.createCart().then(function (newCart) {
+  //     newCart.addVariants({variant: variant, quantity: 1}).then(function (cart) {
+  //       document.location.href = cart.checkoutUrl;
+  //     });
+  //   });
+  // }
+
+  // function getVariant(variant_id) {
+  //   for (var i = 0; i < product.variants.length; i++) {
+  //     if (product.variants[i].id == variant_id) {
+  //       return product.variants[i];
+  //     }
+  //   }
+  // }
+</script>
+
+<%
+=end
+%>
