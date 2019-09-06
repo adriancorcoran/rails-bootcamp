@@ -15,6 +15,22 @@ class RentalsController < ApplicationController
         @product = ShopifyAPI::Product.find(params[:product_id])
         # get the variants
         @variants = @product.variants
+        # get the images and their urls for use by the variants later on
+        @image_urls = {}
+        # check for images
+        if @product.images
+          @product.images.each do |image|
+            @image_urls[image.id] = image.src
+          end
+        end
+
+
+        # puts " "
+        # puts "---"
+        # puts @image_urls.inspect 
+        # puts "---"
+        # puts " "
+        
 
 # puts "@variants"
 # puts @variants.inspect

@@ -9,8 +9,35 @@
   }
 }
 
+// users table
 #users-table {
   td {
     height: 40px;
+  }
+}
+
+// --------------------------------------------------
+// PRODUCT CARD
+// --------------------------------------------------
+.products {
+  $gap-padding: 10px;
+
+  display: grid;
+  grid-gap: $gap-padding;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  @media only screen and (max-width: 749px) {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    display: grid;
+    justify-content: center;
+
+    * {
+      text-align: center;
+    }
   }
 }

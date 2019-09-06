@@ -1,0 +1,200 @@
+#<ShopifyAPI: :Product: 0x00007fbb2ce24598 @attributes={
+  "id"=>12533727254,
+  "title"=>"Irish Ballast Wagon",
+  "body_html"=>"<p>A three-wagon pack of the iconic two-axle ballast/mineral wagon.</p>\n<p><strong>Features:</strong></p>\n<ul>\n<li>NEM coupling housing</li>\n<li>RP25.110 darkened profile wheel sets with 14.4mm back to backs, and 26mm over pin points</li>\n<li>Etched steel factory fitted parts</li>\n<ul>\n<li>sub 1</li>\n<li>sub2</li>\n</ul>\n<li>Extra fine factory fitted detail plastic parts</li>\n<li>DJModels ‘Quick Load’ ballast load for all three wagons</li>\n<li>Individual lettering from real wagons for authenticity</li>\n<li>Pack of ThreeWagons</li>\n</ul>\n<p> </p>",
+  "vendor"=>"buy-trains-ireland",
+  "product_type"=>"Wagon",
+  "created_at"=>"2017-10-16T14:18:33+01:00",
+  "handle"=>"irish-ballast-wagon",
+  "updated_at"=>"2019-09-06T14:20:54+01:00",
+  "published_at"=>"2017-10-16T14:18:33+01:00",
+  "template_suffix"=>nil,
+  "tags"=>"irish, link-Irish Locomotive Murphy CL071",
+  "published_scope"=>"web",
+  "admin_graphql_api_id"=>"gid://shopify/Product/12533727254",
+  "variants"=>[#<ShopifyAPI: :Variant: 0x00007fbb2ce2f240 @attributes={
+      "id"=>42022371350,
+      "title"=>"Pack of 3 / L",
+      "price"=>"110.00",
+      "sku"=>"",
+      "position"=>1,
+      "inventory_policy"=>"deny",
+      "compare_at_price"=>"220.00",
+      "fulfillment_service"=>"manual",
+      "inventory_management"=>"shopify",
+      "option1"=>"Pack of 3",
+      "option2"=>"L",
+      "option3"=>nil,
+      "created_at"=>"2017-10-16T14:18:33+01:00",
+      "updated_at"=>"2019-09-06T14:09:48+01:00",
+      "taxable"=>true,
+      "barcode"=>"",
+      "grams"=>0,
+      "image_id"=>26062290966,
+      "weight"=>0.0,
+      "weight_unit"=>"kg",
+      "inventory_item_id"=>30481776662,
+      "inventory_quantity"=>50,
+      "old_inventory_quantity"=>50,
+      "requires_shipping"=>true,
+      "admin_graphql_api_id"=>"gid://shopify/ProductVariant/42022371350"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>, #<ShopifyAPI: :Variant: 0x00007fbb2ce2dee0 @attributes={
+      "id"=>13846932488214,
+      "title"=>"Pack of 3 / M",
+      "price"=>"100.00",
+      "sku"=>"",
+      "position"=>2,
+      "inventory_policy"=>"deny",
+      "compare_at_price"=>"200.00",
+      "fulfillment_service"=>"manual",
+      "inventory_management"=>"shopify",
+      "option1"=>"Pack of 3",
+      "option2"=>"M",
+      "option3"=>nil,
+      "created_at"=>"2019-01-25T11:27:45+00:00",
+      "updated_at"=>"2019-09-06T14:09:49+01:00",
+      "taxable"=>true,
+      "barcode"=>"",
+      "grams"=>0,
+      "image_id"=>26062290966,
+      "weight"=>0.0,
+      "weight_unit"=>"kg",
+      "inventory_item_id"=>14150394282006,
+      "inventory_quantity"=>10,
+      "old_inventory_quantity"=>10,
+      "requires_shipping"=>true,
+      "admin_graphql_api_id"=>"gid://shopify/ProductVariant/13846932488214"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>, #<ShopifyAPI: :Variant: 0x00007fbb2ce2cdd8 @attributes={
+      "id"=>42022404118,
+      "title"=>"Pack of 9 / L",
+      "price"=>"330.00",
+      "sku"=>"",
+      "position"=>3,
+      "inventory_policy"=>"deny",
+      "compare_at_price"=>"660.00",
+      "fulfillment_service"=>"manual",
+      "inventory_management"=>"shopify",
+      "option1"=>"Pack of 9",
+      "option2"=>"L",
+      "option3"=>nil,
+      "created_at"=>"2017-10-16T14:18:33+01:00",
+      "updated_at"=>"2019-09-06T14:09:49+01:00",
+      "taxable"=>true,
+      "barcode"=>"",
+      "grams"=>0,
+      "image_id"=>2071537418262,
+      "weight"=>0.0,
+      "weight_unit"=>"kg",
+      "inventory_item_id"=>30481809430,
+      "inventory_quantity"=>0,
+      "old_inventory_quantity"=>0,
+      "requires_shipping"=>true,
+      "admin_graphql_api_id"=>"gid://shopify/ProductVariant/42022404118"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>, #<ShopifyAPI: :Variant: 0x00007fbb2ce37c10 @attributes={
+      "id"=>13846932520982,
+      "title"=>"Pack of 9 / M",
+      "price"=>"300.00",
+      "sku"=>"",
+      "position"=>4,
+      "inventory_policy"=>"deny",
+      "compare_at_price"=>"600.00",
+      "fulfillment_service"=>"manual",
+      "inventory_management"=>"shopify",
+      "option1"=>"Pack of 9",
+      "option2"=>"M",
+      "option3"=>nil,
+      "created_at"=>"2019-01-25T11:27:45+00:00",
+      "updated_at"=>"2019-09-06T14:09:50+01:00",
+      "taxable"=>true,
+      "barcode"=>"",
+      "grams"=>0,
+      "image_id"=>2071537418262,
+      "weight"=>0.0,
+      "weight_unit"=>"kg",
+      "inventory_item_id"=>14150394314774,
+      "inventory_quantity"=>50,
+      "old_inventory_quantity"=>50,
+      "requires_shipping"=>true,
+      "admin_graphql_api_id"=>"gid://shopify/ProductVariant/13846932520982"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>
+  ],
+  "options"=>[#<ShopifyAPI: :Option: 0x00007fbb2ce36270 @attributes={
+      "id"=>15749349398,
+      "product_id"=>12533727254,
+      "name"=>"Pack Size",
+      "position"=>1,
+      "values"=>[
+        "Pack of 3",
+        "Pack of 9"
+      ]
+    }, @prefix_options={}, @persisted=true>, #<ShopifyAPI: :Option: 0x00007fbb2ce35d48 @attributes={
+      "id"=>2062330396694,
+      "product_id"=>12533727254,
+      "name"=>"Size",
+      "position"=>2,
+      "values"=>[
+        "L",
+        "M"
+      ]
+    }, @prefix_options={}, @persisted=true>
+  ],
+  "images"=>[#<ShopifyAPI: :Image: 0x00007fbb2ce35460 @attributes={
+      "id"=>26062290966,
+      "position"=>1,
+      "created_at"=>"2017-10-16T14:18:33+01:00",
+      "updated_at"=>"2019-09-06T14:20:54+01:00",
+      "alt"=>nil,
+      "width"=>600,
+      "height"=>450,
+      "src"=>"https://cdn.shopify.com/s/files/1/2459/5693/products/irish-truck.jpg?v=1567776054",
+      "variant_ids"=>[
+        42022371350,
+        13846932488214
+      ],
+      "admin_graphql_api_id"=>"gid://shopify/ProductImage/26062290966"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>, #<ShopifyAPI: :Image: 0x00007fbb2ce34df8 @attributes={
+      "id"=>2071537418262,
+      "position"=>2,
+      "created_at"=>"2018-03-29T15:26:36+01:00",
+      "updated_at"=>"2019-09-06T14:20:54+01:00",
+      "alt"=>nil,
+      "width"=>986,
+      "height"=>798,
+      "src"=>"https://cdn.shopify.com/s/files/1/2459/5693/products/29-26-e2cl4-fjmki.jpg?v=1567776054",
+      "variant_ids"=>[
+        42022404118,
+        13846932520982
+      ],
+      "admin_graphql_api_id"=>"gid://shopify/ProductImage/2071537418262"
+    }, @prefix_options={
+      :product_id=>12533727254
+    }, @persisted=true>
+  ],
+  "image"=>#<ShopifyAPI: :Image: 0x00007fbb2ce34128 @attributes={
+    "id"=>26062290966,
+    "position"=>1,
+    "created_at"=>"2017-10-16T14:18:33+01:00",
+    "updated_at"=>"2019-09-06T14:20:54+01:00",
+    "alt"=>nil,
+    "width"=>600,
+    "height"=>450,
+    "src"=>"https://cdn.shopify.com/s/files/1/2459/5693/products/irish-truck.jpg?v=1567776054",
+    "variant_ids"=>[
+      42022371350,
+      13846932488214
+    ],
+    "admin_graphql_api_id"=>"gid://shopify/ProductImage/26062290966"
+  }, @prefix_options={
+    :product_id=>12533727254
+  }, @persisted=true>
+}, @prefix_options={}, @persisted=true>

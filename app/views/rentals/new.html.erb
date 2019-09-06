@@ -1,88 +1,20 @@
-<%# buy button %>
-
-<div id='product-component-1567694939480'></div>
-    <script type="text/javascript">
-    /*<![CDATA[*/
-      (function () {
-        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-        if (window.ShopifyBuy) {
-          if (window.ShopifyBuy.UI) {
-            ShopifyBuyInit();
-          } else {
-            loadScript();
-          }
-        } else {
-          loadScript();
-        }
-
-      function loadScript() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
-      }
-
-      function ShopifyBuyInit() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'test-store-adrian-corcoran-01.myshopify.com',
-          storefrontAccessToken: 'cbff80f5fe3928d2e4d43fe753b89aac',
-        });
-
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          ui.createComponent('product', {
-            id: [12533727254],
-            node: document.getElementById('product-component-1567694939480'),
-            moneyFormat: '€{{amount}}',
-            options: {"product":{"variantId":"all","width":"240px","contents":{"img":false,"imgWithCarousel":false,"title":false,"variantTitle":false,"price":false,"description":false,"buttonWithQuantity":false,"quantity":false},"styles":{"product":{"text-align":"left","@media (min-width: 601px)":{"max-width":"100%","margin-left":"0","margin-bottom":"50px"}},"compareAt":{"font-size":"12px"}}},"cart":{"contents":{"button":true},"styles":{"footer":{"background-color":"#ffffff"}}},"modalProduct":{"contents":{"img":false,"imgWithCarousel":true,"variantTitle":false,"buttonWithQuantity":true,"button":false,"quantity":false},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0px","margin-bottom":"0px"}}}},"productSet":{"styles":{"products":{"@media (min-width: 601px)":{"margin-left":"-20px"}}}}},
-          });
-        });
-      }
-    })();
-    /*]]>*/
-    </script>
-
-
-
-<%
-=begin
-%>
-
-# Checkout links
-
-Pack of 3 / L
-https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:1?channel=buy_button
-
-Pack of 3 / M
-https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932488214:1?channel=buy_button
-
-Pack of 9 / L
-https://test-store-adrian-corcoran-01.myshopify.com/cart/42022404118:1?channel=buy_button
-
-Pack of 9 / M
-https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932520982:1?channel=buy_button
-
-<%
-=end
-%>
-
-<% # ------------------------------ %>
-
 <% content_for :main_heading do %>
   You have chosen to rent: <strong><%= @product.title %></strong>
 <% end %>
 
-<p>Please select a starting date and rental period below:</p>
+<%# heading %>
+<p class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Please select a starting date and rental period below:</p>
+<p class="Polaris-DisplayText">&nbsp;</p>
 
 <%# loop through and display variants %>
-<%= select_tag :variant_id, options_for_select(@variants.collect{ |v| ["#{v.title}-#{v.id}", v.id] }) %>
+<div class="products">
+  <% @variants.each do | variant | %>
+    <%= render "shared/product_card", variant: variant %>
+  <% end %>
+</div>
 
-<%= render "shared/button", text: "Rent", link: 'https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:1?channel=buy_button', style_class: 'Polaris-Button--primary' %>
 
-
-
-
-
+<% # ------------------------------ %>
 
 <%
 =begin
@@ -190,3 +122,57 @@ https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932520982:1?channe
 <%
 =end
 %>
+
+
+<%# buy button %>
+
+<%
+=begin
+%>
+
+<div id='product-component-1567694939480'></div>
+    <script type="text/javascript">
+    /*<![CDATA[*/
+      (function () {
+        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
+          } else {
+            loadScript();
+          }
+        } else {
+          loadScript();
+        }
+
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'test-store-adrian-corcoran-01.myshopify.com',
+          storefrontAccessToken: 'cbff80f5fe3928d2e4d43fe753b89aac',
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent('product', {
+            id: [12533727254],
+            node: document.getElementById('product-component-1567694939480'),
+            moneyFormat: '€{{amount}}',
+            options: {"product":{"variantId":"all","width":"240px","contents":{"img":false,"imgWithCarousel":false,"title":false,"variantTitle":false,"price":false,"description":false,"buttonWithQuantity":false,"quantity":false},"styles":{"product":{"text-align":"left","@media (min-width: 601px)":{"max-width":"100%","margin-left":"0","margin-bottom":"50px"}},"compareAt":{"font-size":"12px"}}},"cart":{"contents":{"button":true},"styles":{"footer":{"background-color":"#ffffff"}}},"modalProduct":{"contents":{"img":false,"imgWithCarousel":true,"variantTitle":false,"buttonWithQuantity":true,"button":false,"quantity":false},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0px","margin-bottom":"0px"}}}},"productSet":{"styles":{"products":{"@media (min-width: 601px)":{"margin-left":"-20px"}}}}},
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
+
+<%
+=end
+%>
+

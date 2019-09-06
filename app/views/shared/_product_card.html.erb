@@ -1,0 +1,38 @@
+<%# product card %>
+
+<%
+=begin
+%>
+
+# using local variables: optional
+- text
+- link
+- style_class
+- method
+
+<%
+=end
+%>
+
+<% 
+# get variant data
+variant_data = local_assigns[:variant].attributes 
+
+# get image url
+image_src = @image_urls[variant_data['image_id']] || @product.image.src
+
+# apply transformations
+image_url = image_src.sub '.jpg', '_x200.jpg'
+
+# disable button
+active_button  = variant_data['inventory_quantity'] > 0 ? true : false
+%>
+
+<%# display card %>
+<div class="Polaris-TextContainer product-card">
+  <h2 class="Polaris-Heading product-card__title"><%= variant_data['title'] %></h2>
+  <img class="product-card__image" src="<%= image_url %>" title="<%= variant_data['title'] %>" />
+  <p class="product-card__price"><%= number_to_currency(variant_data['price'], unit: "€") %></p>
+  <p class="product-card__inventory">Number in stock: <%= variant_data['inventory_quantity'] %></p>
+  <%= render "shared/button", text: "Rent", link: "https://test-store-adrian-corcoran-01.myshopify.com/cart/#{variant_data['id']}:1?channel=buy_button", style_class: "Polaris-Button--#{active_button ? "primary" : "disabled"} product-card__button", active_button: active_button %>
+</div>
