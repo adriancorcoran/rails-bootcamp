@@ -23,18 +23,6 @@ class RentalsController < ApplicationController
             @image_urls[image.id] = image.src
           end
         end
-
-
-        # puts " "
-        # puts "---"
-        # puts @image_urls.inspect 
-        # puts "---"
-        # puts " "
-        
-
-# puts "@variants"
-# puts @variants.inspect
-# puts " " 
       rescue StandardError => e
         puts "Rescued: #{e.inspect}"
       end
@@ -43,6 +31,21 @@ class RentalsController < ApplicationController
       flash.now[:notice] = "You must specify a product id"  
     end
 
+  end
+
+  def create
+    # create a rental record
+    Rental.create(
+      user_id: session[:current_user_id],
+      product_id: params["product_id"].to_i,
+      variant_id: params["variant_id"].to_i,
+      checkout_url: params["checkout_url"],
+      start_date: Time.now,
+      duration: params["duration"]
+    )
+
+    # head to the checkout
+    redirect_to params["checkout_url"]
   end
 
 end

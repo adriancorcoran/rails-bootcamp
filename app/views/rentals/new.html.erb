@@ -1,9 +1,51 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script language="javascript">
+
+$(document).ready(function() {
+
+  //  take action when the rent button is clicked
+  $('.product-card__button').on('click', function() {
+
+    // get data
+    let $thisProductCard = $(this).parents('div.product-card');
+    let $thisProductCardButton = $thisProductCard.find('.Polaris-ButtonGroup__Item');
+    // set data
+    let productId = $thisProductCard.data('product-id');
+    let variantId = $thisProductCard.data('variant-id');
+    let duration = $thisProductCard.find('.product-card__quantity').val();
+    let checkoutUrlBase = $thisProductCardButton.find('a').attr('href');
+    let checkoutUrl = `${checkoutUrlBase}:${duration}?channel=buy_button`;
+
+    // send call to api
+    $.ajax({
+      url: "/rentals",
+      type: "POST",
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      data: {
+        "product_id" : productId,
+        "variant_id" : variantId,
+        "checkout_url" : checkoutUrl,
+        "duration" : duration
+      }
+    });
+
+    //  prevent the a link being clicked
+    return false;
+  })
+});
+</script>
+        
+<% # ------------------------------ %>
+        
 <% content_for :main_heading do %>
   You have chosen to rent: <strong><%= @product.title %></strong>
 <% end %>
 
 <%# heading %>
-<p class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Please select a starting date and rental period below:</p>
+<p id="instructions-text" class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Please select a rental period below:</p>
 <p class="Polaris-DisplayText">&nbsp;</p>
 
 <%# loop through and display variants %>

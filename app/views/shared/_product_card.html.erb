@@ -9,6 +9,7 @@
 - link
 - style_class
 - method
+- active_button
 
 <%
 =end
@@ -29,10 +30,17 @@ active_button  = variant_data['inventory_quantity'] > 0 ? true : false
 %>
 
 <%# display card %>
-<div class="Polaris-TextContainer product-card">
+<div id="product-card-<%= variant_data['id'] %>" class="Polaris-TextContainer product-card" data-product-id="<%= @product.id %>" data-variant-id="<%= variant_data['id'] %>" >
   <h2 class="Polaris-Heading product-card__title"><%= variant_data['title'] %></h2>
   <img class="product-card__image" src="<%= image_url %>" title="<%= variant_data['title'] %>" />
   <p class="product-card__price"><%= number_to_currency(variant_data['price'], unit: "€") %></p>
-  <p class="product-card__inventory">Number in stock: <%= variant_data['inventory_quantity'] %></p>
-  <%= render "shared/button", text: "Rent", link: "https://test-store-adrian-corcoran-01.myshopify.com/cart/#{variant_data['id']}:1?channel=buy_button", style_class: "Polaris-Button--#{active_button ? "primary" : "disabled"} product-card__button", active_button: active_button %>
+  <%# inventory %>
+  <% if active_button %>
+    <p class="product-card__inventory">Available to rent for <%= variant_data['inventory_quantity'] %> <%= "day".pluralize(variant_data['inventory_quantity']) %></p>
+    <p>Rental Period: <%= select_tag "product-card__quantity-#{variant_data['id']}", options_for_select(1.upto(variant_data['inventory_quantity']).map{ |n| [n, n]}), class: "product-card__quantity" %></p>
+  <% else %>
+    <p class="product-card__inventory">Not available to rent</p>
+    <p>&nbsp;</p>
+  <% end %>
+  <%= render "shared/button", text: "Rent", link: "https://test-store-adrian-corcoran-01.myshopify.com/cart/#{variant_data['id']}", style_class: "Polaris-Button--#{active_button ? "primary" : "disabled"} product-card__button", active_button: active_button %>
 </div>
