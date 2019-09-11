@@ -1,0 +1,247 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2019-08-27 15:02:59.910843000 Z
+    - 2019-08-27 15:02:59.910843000 Z
+  - - schema_sha1
+    - cd30cd0b9a3056f1b8c2fb545fbdffdbf3ae8af7
+    - 2019-08-27 15:03:00.218601000 Z
+    - 2019-08-27 15:03:00.218601000 Z
+
+---
+rentals:
+  columns:
+  - id
+  - user_id
+  - product_id
+  - product_name
+  - variant_id
+  - variant_name
+  - sale_total
+  - checkout_url
+  - start_date
+  - duration
+  - created_at
+  - updated_at
+  records: 
+  - - 9
+    - 1
+    - 12533727254
+    - Irish Ballast Wagon
+    - 42022371350
+    - Pack of 3 / L
+    - 44000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:4?channel=buy_button
+    - 2019-09-04 16:15:10.000000000 Z
+    - 4
+    - 2019-09-10 16:15:11.003237000 Z
+    - 2019-09-10 16:15:11.003237000 Z
+  - - 13
+    - 15
+    - 12534153238
+    - Hornby Pullman Brake Car
+    - 42022895638
+    - Hornby Pullman Brake Car
+    - 18396.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022895638:4?channel=buy_button
+    - 2019-09-10 16:20:44.000000000 Z
+    - 4
+    - 2019-09-10 16:20:44.820995000 Z
+    - 2019-09-10 16:20:44.820995000 Z
+  - - 14
+    - 2
+    - 12534120470
+    - EWS CL67 Diesel Western Star
+    - 42022862870
+    - EWS CL67 Diesel Western Star
+    - 25998.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022862870:2?channel=buy_button
+    - 2019-09-10 16:21:00.000000000 Z
+    - 2
+    - 2019-09-10 16:21:00.895454000 Z
+    - 2019-09-10 16:21:00.895454000 Z
+  - - 15
+    - 1
+    - 12533727254
+    - Irish Ballast Wagon
+    - 13846932488214
+    - Pack of 3 / M
+    - 30000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932488214:3?channel=buy_button
+    - 2019-09-10 16:21:12.000000000 Z
+    - 3
+    - 2019-09-10 16:21:12.589411000 Z
+    - 2019-09-10 16:21:12.589411000 Z
+  - - 16
+    - 2
+    - 12533727254
+    - Irish Ballast Wagon
+    - 13846932520982
+    - Pack of 9 / M
+    - 30000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932520982:1?channel=buy_button
+    - 2019-09-10 16:21:18.000000000 Z
+    - 1
+    - 2019-09-10 16:21:18.620609000 Z
+    - 2019-09-10 16:21:18.620609000 Z
+  - - 17
+    - 1
+    - 12533727254
+    - Irish Ballast Wagon
+    - 42022371350
+    - Pack of 3 / L
+    - 33000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:3?channel=buy_button
+    - 2019-09-10 22:07:14.000000000 Z
+    - 3
+    - 2019-09-10 22:07:14.964478000 Z
+    - 2019-09-10 22:07:14.964478000 Z
+  - - 18
+    - 15
+    - 12533727254
+    - Irish Ballast Wagon
+    - 42022371350
+    - Pack of 3 / L
+    - 33000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:3?channel=buy_button
+    - 2019-09-10 22:08:17.000000000 Z
+    - 3
+    - 2019-09-10 22:08:17.522429000 Z
+    - 2019-09-10 22:08:17.522429000 Z
+  - - 19
+    - 2
+    - 12533727254
+    - Irish Ballast Wagon
+    - 42022371350
+    - Pack of 3 / L
+    - 22000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022371350:2?channel=buy_button
+    - 2019-09-10 22:10:15.000000000 Z
+    - 2
+    - 2019-09-10 22:10:15.783998000 Z
+    - 2019-09-10 22:10:15.783998000 Z
+  - - 20
+    - 2
+    - 12533727254
+    - Irish Ballast Wagon
+    - 13846932488214
+    - Pack of 3 / M
+    - 30000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932488214:3?channel=buy_button
+    - 2019-09-10 22:15:58.000000000 Z
+    - 3
+    - 2019-09-10 22:15:59.120880000 Z
+    - 2019-09-10 22:15:59.120880000 Z
+  - - 26
+    - 1
+    - 12533956630
+    - LNER CLA1 Flying Scotsman
+    - 42022699030
+    - LNER CLA1 Flying Scotsman
+    - 35997.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022699030:3?channel=buy_button
+    - 2019-09-10 22:31:10.000000000 Z
+    - 3
+    - 2019-09-10 22:31:10.803859000 Z
+    - 2019-09-10 22:31:10.803859000 Z
+  - - 27
+    - 1
+    - 12534611990
+    - Signal Junction
+    - 42023354390
+    - 1 Sign / Red
+    - 7995.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42023354390:5?channel=buy_button
+    - 2019-09-10 22:33:54.000000000 Z
+    - 5
+    - 2019-09-10 22:33:54.206001000 Z
+    - 2019-09-10 22:33:54.206001000 Z
+  - - 28
+    - 2
+    - 12533989398
+    - CL08 Diesel Shunter
+    - 42022731798
+    - CL08 Diesel Shunter
+    - 69995.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42022731798:5?channel=buy_button
+    - 2019-09-10 22:34:49.000000000 Z
+    - 5
+    - 2019-09-10 22:34:49.155810000 Z
+    - 2019-09-10 22:34:49.155810000 Z
+  - - 30
+    - 15
+    - 12534546454
+    - Hornby Engine Shed
+    - 42023288854
+    - Hornby Engine Shed
+    - 7797.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/42023288854:3?channel=buy_button
+    - 2019-09-10 22:44:55.000000000 Z
+    - 3
+    - 2019-09-10 22:44:55.593506000 Z
+    - 2019-09-10 22:44:55.593506000 Z
+  - - 31
+    - 16
+    - 12533727254
+    - Irish Ballast Wagon
+    - 13846932488214
+    - Pack of 3 / M
+    - 30000.0
+    - https://test-store-adrian-corcoran-01.myshopify.com/cart/13846932488214:3?channel=buy_button
+    - 2019-09-11 13:06:47.000000000 Z
+    - 3
+    - 2019-09-11 13:06:47.999072000 Z
+    - 2019-09-11 13:06:47.999072000 Z
+
+---
+users:
+  columns:
+  - id
+  - email
+  - password
+  - first_name
+  - last_name
+  - created_at
+  - updated_at
+  - phone_number
+  records: 
+  - - 1
+    - adrian.corcoran@shopify.com
+    - password
+    - Adrian
+    - Corcoran
+    - 2019-08-28 12:56:50.725551000 Z
+    - 2019-09-10 16:15:03.271150000 Z
+    - '087 9506912'
+  - - 2
+    - karen.mccrann@shopify.com
+    - password
+    - Karen
+    - McCrann
+    - 2019-08-28 15:31:41.591863000 Z
+    - 2019-09-10 16:14:52.779283000 Z
+    - '086 7896514'
+  - - 15
+    - adriancorcoran36@gmail.com
+    - password
+    - Adrian
+    - Thomas
+    - 2019-08-28 16:47:03.041502000 Z
+    - 2019-09-10 16:14:33.717320000 Z
+    - '087 5463728'
+  - - 16
+    - karen.mccrann@gmail.com
+    - password
+    - Karen
+    - McCrann
+    - 2019-09-11 13:05:27.840887000 Z
+    - 2019-09-11 13:05:27.840887000 Z
+    - '086 3453818'

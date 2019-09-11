@@ -65,3 +65,6 @@ gem 'bootstrap-sass'
 
 # add shopify_api to access Shopify store api
 gem 'shopify_api', '>= 7.0.1'
+
+# dump db data
+gem 'yaml_db'
