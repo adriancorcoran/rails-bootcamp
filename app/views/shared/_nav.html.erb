@@ -5,11 +5,11 @@
     <%# check if user logged in %>
     <% if session[:current_user_id] %>
       <%= render "shared/button", text: "Dashboard", link: root_url %>
-      <%= render "shared/button", text: "My Shop Account", link: session[:shop_url], style_class: 'Polaris-Button--primary' %>
+      <%= render "shared/button", text: "Show All Users", link: users_path %>
       <%= render "shared/button", text: "Product: Irish Ballast Wagon", link: root_url + 'rentals/new/12533727254' %>
       <%= render "shared/button", text: "Product: Diesel Western Star", link: root_url + 'rentals/new/12534120470' %>
       <%= render "shared/button", text: "Product: Pullman Brake Car", link: root_url + 'rentals/new/12534153238' %>
-      <%= render "shared/button", text: "Show All Users", link: users_path %>
+      <%= render "shared/button", text: "My Shop Account", link: session[:shop_url], style_class: 'Polaris-Button--primary' %>
       <%= render "shared/button", text: "Logout", link: logout_path, method: :delete %>
     <% else %>
       <%= render "shared/button", text: "Sign Up", link: new_user_path, style_class: 'Polaris-Button--primary' %>

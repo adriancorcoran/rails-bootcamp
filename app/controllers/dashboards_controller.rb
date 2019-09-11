@@ -1,7 +1,15 @@
 class DashboardsController < ApplicationController
   
   def index
-    @rentals = Rental.last(100)
+    if session[:current_user_id]
+      # get rentals
+      @rentals = Rental.last(100)
+    else
+      # add message
+      flash[:title] = "Login"
+      flash[:notice] = "Please login to view rentals."
+      redirect_to login_path
+    end
   end
 
   def personalized

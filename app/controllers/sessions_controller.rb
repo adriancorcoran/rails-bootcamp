@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       flash[:title] = "Logged in"
       flash[:success] = "You successfully logged in!"
       # redirect_to user_path(@user.id)
-      redirect_to users_path
+      redirect_to root_url
     else
       flash[:title] = "Could not log in"
       flash[:error] = "We could not log you in, please try again!!"
