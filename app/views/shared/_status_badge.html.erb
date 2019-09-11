@@ -1,0 +1,15 @@
+<%# polaris badge %>
+
+<%
+=begin
+%>
+
+# using local variables: optional
+- message
+- message_type
+
+<%
+=end
+%>
+
+<span class="Polaris-Badge Polaris-Badge--status<%= local_assigns[:message_type] %>"><span class="Polaris-VisuallyHidden"><%= local_assigns[:message_type] %></span><%= local_assigns[:message] %></span>

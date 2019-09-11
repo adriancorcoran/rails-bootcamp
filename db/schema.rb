@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_163655) do
+ActiveRecord::Schema.define(version: 2019_09_10_220120) do
 
   create_table "rentals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.bigint "product_id"
+    t.string "product_name"
     t.bigint "variant_id"
+    t.string "variant_name"
+    t.float "sale_total"
     t.string "checkout_url"
     t.timestamp "start_date"
     t.integer "duration"

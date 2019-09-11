@@ -1,1 +1,67 @@
-<p>Yo!</p>
+<% content_for :main_heading do %>
+  Currently Rented:</strong>
+<% end %>
+
+<%# loop through and display rentals %>
+<table id="rentals-table" class="data-table">
+  <thead>
+    <td>User</td>
+    <td>Contact Email</td>
+    <td>Contact Phone</td>
+    <td>Product</td>
+    <td>Variant</td>
+    <td>Duration</td>
+    <td>Rented At</td>
+    <td>Due Back</td>
+    <td>Status</td>
+    <td>Sale Total</td>
+    <td>Checkout</td>
+  </thead>
+
+  <%# loop through rentals %>
+  <% @rentals.each do |rental| %>
+  <% 
+    # set dates
+    due_back = DateTime.parse(rental.start_date.to_s)+(rental.duration).days
+    
+    # today = DateTime.now - 1.days
+    today = DateTime.now
+    # today = DateTime.now + 1.days
+    
+    days_left = (due_back - today).to_i
+    
+    # conditions for statuses
+    if days_left < 0
+      message = "Overdue!!"
+      message_type = "Warning"
+    elsif days_left === 0
+      message = "Due today!"
+      message_type = "Attention"
+    elsif days_left === 1
+      message = "Due tomorrow"
+      message_type = "Info"
+    else
+      message = days_left.to_s + " days remaining"
+      message_type = "Success"
+    end
+
+    # format dates
+    start_date_format = DateTime.parse(rental.start_date.to_s).strftime("%d/%m/%Y")
+    due_back_format = due_back.strftime("%d/%m/%Y")
+  %>
+    <%# display table row %>
+    <tr class="<% if session[:current_user_id] == rental.user_id %><%= "this-user-row" %><% end %>">
+      <td><%= "#{rental.user.first_name} #{rental.user.last_name} " %></td>
+      <td><%= rental.user.email %></td>
+      <td><%= rental.user.phone_number %></td>
+      <td><%= rental.product_name %></td>
+      <td><%= rental.variant_name %></td>
+      <td><%= rental.duration %> <%= "day".pluralize(rental.duration) %></td>
+      <td><%= start_date_format %></td>
+      <td><%= due_back_format %></td>
+      <td><%= render "shared/status_badge", message: message, message_type: message_type %></td>
+      <td><strong><%= number_to_currency(rental.sale_total / 100, unit: "€") %></strong></td>
+      <td><%= render "shared/button", text: "Checkout", link: rental.checkout_url %></td>
+    </tr>
+  <% end %>
+</table>

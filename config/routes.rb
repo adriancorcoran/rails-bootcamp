@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # view all routes by running 
   # bin/rails routes
 
-  get "dashboards/index"
+  root "dashboards#index"
 
   get 'dashboards/hello', to: 'dashboards#hello'
   get 'dashboards/hi', to: 'dashboards#hi'

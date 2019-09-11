@@ -2,12 +2,17 @@
   Hi there <%= @user.first_name %>! Here's all the Users :)
 <% end %>
 
-<table id="users-table">
+<table id="users-table" class="data-table">
+  <thead>
+    <td>Name</td>
+    <td>Email</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </thead>
+
   <% @users.each do |user| %>
     <tr>
-      <td><strong> Name:</strong> </td>
       <td><%="#{user.first_name} #{user.last_name}"%></td>
-      <td><strong> Email:</strong> </td>
       <td><%= user.email %></td>
       <% if session[:current_user_id] == user.id %>
         <td>                  

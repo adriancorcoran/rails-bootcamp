@@ -30,8 +30,8 @@ active_button  = variant_data['inventory_quantity'] > 0 ? true : false
 %>
 
 <%# display card %>
-<div id="product-card-<%= variant_data['id'] %>" class="Polaris-TextContainer product-card" data-product-id="<%= @product.id %>" data-variant-id="<%= variant_data['id'] %>" >
-  <h2 class="Polaris-Heading product-card__title"><%= variant_data['title'] %></h2>
+<div id="product-card-<%= variant_data['id'] %>" class="Polaris-TextContainer product-card" data-product-id="<%= @product.id %>" data-variant-id="<%= variant_data['id'] %>" data-variant-price="<%= variant_data['price'] %>">
+  <h2 class="Polaris-Heading product-card__title"><%= (variant_data['title'] === 'Default Title') ? @product.title : variant_data['title'] %></h2>
   <img class="product-card__image" src="<%= image_url %>" title="<%= variant_data['title'] %>" />
   <p class="product-card__price"><%= number_to_currency(variant_data['price'], unit: "€") %></p>
   <%# inventory %>

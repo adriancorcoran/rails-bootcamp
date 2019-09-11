@@ -15,6 +15,7 @@ $(document).ready(function() {
     // set data
     let productId = $thisProductCard.data('product-id');
     let variantId = $thisProductCard.data('variant-id');
+    let variantPrice = $thisProductCard.data('variant-price');
     let duration = $thisProductCard.find('.product-card__quantity').val();
     let checkoutUrlBase = $thisProductCardButton.find('a').attr('href');
     let checkoutUrl = `${checkoutUrlBase}:${duration}?channel=buy_button`;
@@ -27,6 +28,7 @@ $(document).ready(function() {
       data: {
         "product_id" : productId,
         "variant_id" : variantId,
+        "variant_price" : variantPrice,
         "checkout_url" : checkoutUrl,
         "duration" : duration
       }

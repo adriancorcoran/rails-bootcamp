@@ -1,12 +1,7 @@
 class DashboardsController < ApplicationController
   
   def index
-  end
-
-  def hello
-  end
-
-  def hi
+    @rentals = Rental.last(100)
   end
 
   def personalized
