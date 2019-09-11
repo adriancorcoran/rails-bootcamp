@@ -1,24 +1,11 @@
-# README
+# Rails Bootcamp Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Lets get up and running :)
 
-Things you may want to cover:
+1. Clone the repo by running `dev clone git@github.com:adriancorcoran/rails-bootcamp.git`
 
-* Ruby version
+1. `cd` into the directory and install dependencies and start the app by running `dev up && dev server`
 
-* System dependencies
+1. Once up and running run `rake db:load` to load up the data into the database
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Check the `dev.yml` file for database connection information to use in Sequel Pro and go to https://rails-bootcamp.myshopify.io/ to get started :)
